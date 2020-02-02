@@ -8,11 +8,11 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>WEB2.ifpe</groupId>
-	<artifactId>SemanaInformatica</artifactId>
+	<groupId>com.example.demo</groupId>
+	<artifactId>Jogadores</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SemanaInformatica</name>
-	<description>WEB2</description>
+	<name>Jogadores</name>
+	<description>com.example</description>
 
 
 
