@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>Cadastro de Jogador</h1>
-	<form action="/salvarjogador" method="post" th:oject="${jogador}">
+	<form th:action="@{/salvarjogador}" method="post" th:oject="${jogador}">
 		<input type="hidden" th:field="*{id}">
 		<div class="form-group">
 			<label for="exampleInputEmail1">Nome do jogador </label> <input th:field="*{nome}"
@@ -48,12 +48,7 @@
 		</select>
 
 		</div>
-		<div th:if="${#fields.hasErrors('*')}">
-			<ul>
-				<li th:each="erro : ${#fields.errors('*')}" th:text="${erro}"
-					class="alert-danger">
-			</ul>
-		</div>
+	
 		<button type="submit" class="btn btn-primary">Cadastar</button>
 
 
