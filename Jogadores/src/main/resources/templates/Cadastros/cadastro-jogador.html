@@ -12,7 +12,7 @@
 </head>
 <body>
 	<h1>Cadastro de Jogador</h1>
-	<form th:action="@{/salvarjogador}" method="post" th:oject="${jogador}">
+	<form th:action="@{/salvarJogador}" method="post" th:object="${jogador}">
 		<input type="hidden" th:field="*{id}">
 		<div class="form-group">
 			<label for="exampleInputEmail1">Nome do jogador </label> <input th:field="*{nome}"
@@ -43,7 +43,7 @@
 		<label for="exampleInputPassword1">Selecione um club</label> <select
 			class="form-control">
 			<option>Selecione um club</option>
-			<option th:each="clube: ${lista}" th:text="${clube.nome}"
+			<option th:each="clube: ${lista}" th:text="${clube.nomedoclub}"
 				th:value="${clube.id}" />
 		</select>
 
