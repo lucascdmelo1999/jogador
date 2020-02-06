@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<meta charset="UTF-8">
+<title>Ficha de cadastro</title>
+</head>
+<body>
+	<div class="container emp-profile">
+		<form method="post">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="profile-img">
+						<img
+							src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+							alt="" />
+						
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="profile-head">
+						<h5><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.apelido}"></h5>
+						<h6><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.nome}"></h6>
+						<p class="proile-rating">
+							RANKINGS : <span>8/10</span>
+						</p>
+						<ul class="nav nav-tabs" id="myTab" role="tablist">
+							<li class="nav-item"><a class="nav-link active"
+								id="home-tab" data-toggle="tab" href="#home" role="tab"
+								aria-controls="home" aria-selected="true">Ficha</a></li>
+							<!--  <li class="nav-item"><a class="nav-link" id="profile-tab"
+								data-toggle="tab" href="#profile" role="tab"
+								aria-controls="profile" aria-selected="false">Timeline</a></li> -->
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<input type="submit" class="profile-edit-btn" name="btnAddMore"
+						value="Edit Profile" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="profile-work">
+						<p><span th:if="${session.clube != null}" th:text="${session.clube.nomedoclub}"></p>
+						<h6>N° Registro</h6> <h6> 123456</h6>
+						
+						
+						<a href="">Bootply Profile</a>
+						<p>SKILLS</p>
+						<a href="">Web Designer</a><br /> <a href="">Web Developer</a><br />
+						<a href="">WordPress</a><br /> <a href="">WooCommerce</a><br /> <a
+							href="">PHP, .Net</a><br />
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="tab-content profile-tab" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel"
+							aria-labelledby="home-tab">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Nome</label>
+								</div>
+								<div class="col-md-6">
+									<p><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.nome}"></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Apelido</label>
+								</div>
+								<div class="col-md-6">
+									<p><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.apelido}"></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Data de nascimento</label>
+								</div>
+								<div class="col-md-6">
+									<p><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.datadenasc}"></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>Naturalidade</label>
+								</div>
+								<div class="col-md-6">
+									<p><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.naturalidade}"></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<label>nacionalidade</label>
+								</div>
+								<div class="col-md-6">
+									<p><span
+							th:if="${session.usuario != null}"
+							th:text="${session.jogador.nacionalidade}"></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<script
+		src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!------ Include the above in your HEAD tag ---------->
+</body>
+</html>

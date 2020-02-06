@@ -25,6 +25,10 @@ public class Jogador {
 	private String naturalidade;
 	@NotBlank
 	private String nacionalidade;
+	
+	
+	
+
 
 	@ManyToOne
 	private Clube clube;
@@ -85,6 +89,7 @@ public class Jogador {
 		this.clube = clube;
 	}
 
+	
 }
 
 
