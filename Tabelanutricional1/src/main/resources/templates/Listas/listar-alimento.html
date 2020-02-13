@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<meta charset="UTF-8">
+<title>Página inicial</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">NUTRISIMPLE</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="/home">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<!--  <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul> -->
+				<form class="form-inline my-2 my-lg-0">
+
+					<a class="btn btn-outline-success my-2 my-sm-0"
+						href="/cadastraralimento">Cadastrar alimento</a> <br> <a
+						class="btn btn-outline-success my-2 my-sm-0"
+						href="/listaralimento">lista de alimento</a>
+				</form>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="media-container-column col-lg-8" data-form-type="formoid">
+
+				<!---Formbuilder Form--->
+				<form action="/pesquisaralimento" method="post"
+					class="mbr-form form-with-styler" data-form-title="Mobirise Form"
+					th:object="${alimento}">
+					<div class="row">
+
+						<div hidden="hidden" data-form-alert=""
+							class="alert alert-success col-12">Thanks for filling out
+							the form!</div>
+						<div hidden="hidden" data-form-alert-danger=""
+							class="alert alert-danger col-12"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="nome"
+							class="form-control-label mbr-fonts-style display-2">Buscar
+							alimento</label> <input type="text" th:field="*{nome}"
+							class="form-control display-7" id="nome">
+					</div>
+
+
+					<div class="col-md-12 input-group-btn align-center">
+						<button type="submit" class="btn btn-primary btn-form display-4">Buscar</button>
+					</div>
+
+				</form>
+				<!---Formbuilder Form--->
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div class="container">
+		<div class="row">
+
+
+			<div class="col-md-12 display-5">
+				<h4>Lista de alimentos</h4>
+				<div class="table-responsive">
+
+
+					<table id="mytable" class="table table-bordred table-striped">
+
+						<thead>
+
+
+							<th>Nome do alimento</th>
+							<th>Quatidade de calorias</th>
+							<th>carboidratos</th>
+							<th>Sódio</th>
+							<th>Ação</th>
+							
+						</thead>
+						<tbody>
+
+							<tr>
+
+
+								<tr th:each="alim:${lista}">
+
+									<td th:text="${alim.nome}"></td>
+									<td th:text="${alim.calorias}"></td>
+									<td th:text="${alim.carboidratos}"></td>
+									<td th:text="${alim.sodio}"></td>
+									<td><a th:href="@{/removerAlimento(id=${alim.id})}">Remover</a></td>
+									 <td><a th:href="@{/editarAlimento(id=${alim.id})}">Editar</a></td>
+									
+								</tr>
+							</tbody>
+
+						</table>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+									integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+									crossorigin="anonymous"></script>
+								<script
+									src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+									integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+									crossorigin="anonymous"></script>
+	<script
+									src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+									integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+									crossorigin="anonymous"></script>
+
+							</body>
+</html>
